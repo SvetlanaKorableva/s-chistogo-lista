@@ -16,7 +16,6 @@ body {
     background-color: #1e1e1e; /* Цвет фона хедера */
     display: flex; 
     justify-content: space-between; /* элементы по краям */
-    align-items: center; /* элементы по вертикали */
 }
 
 .header__menu {
@@ -25,6 +24,7 @@ body {
 }
 
 .header__logo {
+    top: 0;
     margin-right: 145px; /* Отступ между логотипом и меню */
 }
 
@@ -75,8 +75,6 @@ body {
 }
 .hero-block {
     position: relative;
-    width: 360px;
-    height: 198px; /* Высота блока */
     background-color: #1e1e1e;
     background-image: url("images/cover.svg"); /* Путь к фоновому изображению */
     background-size: cover;
@@ -107,20 +105,20 @@ body {
     font-weight: normal;
 }
 
-.hero-content h1 .word-1,
-.hero-content h1 .word-2,
-.hero-content h1 .word-3 {
+.hero-content h1 .word-initial,
+.hero-content h1 .word-middle,
+.hero-content h1 .word-final {
     display: inline-block;
     position: relative;
     margin-bottom: -20px; /* расстояние между строками */
 }
 
-.hero-content h1 .word-2 {
+.hero-content h1 .word-middle {
     position: absolute;
     left: 60px; /* Отступ для второго слова */
 }
 
-.hero-content h1 .word-3 {
+.hero-content h1 .word-final {
     position: absolute;
     left: 165px; /* Отступ для третьего слова */
 }
@@ -207,12 +205,13 @@ body {
     margin: 0; 
 }
 
-.reasons-list li {
+/* Стиль для каждого пункта списка */
+.reason-item {
     list-style-type: disc; /* Маркеры в виде точек */
-    list-style-position: outside; /* Маркеры внутри элемента списка */
-    margin-top: 16px;
-    font-size: 16px; /* Остальной текст будет 16px */
-    padding-left: 0; /* Отсутствие отступа слева для маркеров */
+    list-style-position: outside; /* Маркеры вне элемента списка */
+    margin-top: 16px; /* Отступ между пунктами */
+    font-size: 16px; /* Размер шрифта */
+    padding-left: 0; /* Отсутствие дополнительных отступов слева */
 }
 
 .content-section_theme_new-section {
@@ -233,8 +232,6 @@ body {
     font-weight: normal;
 }
 .card {
-    width: 319px;
-    height: 495px;
     background-color: #343434;
     border-radius: 30px;
     padding: 20px;
@@ -277,9 +274,7 @@ body {
     line-height: 1.4;
 }
 
-.card-two {
-    width: 319px;
-    height: 368px;
+.card-next {
     background-color: #FEE42A;
     color: #131313;
     border-radius: 30px;
@@ -289,7 +284,7 @@ body {
     margin-top: 32px;
 }
 
-.card-title-two {
+.card-title-next {
     font-family: 'EB Garamond', serif;
     font-size: 22px;
     font-weight: normal;
@@ -298,7 +293,7 @@ body {
     margin-bottom: 8px; /* Отступ после заголовка */
 }
 
-.card-text-two {
+.card-text-next {
     font-family: 'Intel', sans-serif;
     font-size: 16px;
     margin: 0;
@@ -306,9 +301,7 @@ body {
     line-height: 1.4;
 }
 
-.card-three {
-    width: 319px;
-    height: 559px;
+.card-final {
     background-color: #343434;
     border-radius: 30px;
     padding: 20px;
@@ -318,7 +311,7 @@ body {
     margin-bottom: 60px;
 }
 
-.profile-picture-three {
+.profile-picture-final {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -328,7 +321,7 @@ body {
     left: 20px;
 }
 
-.author-name-three {
+.author-name-final {
     font-family: 'Intel', sans-serif;
     font-size: 16px;
     font-weight: bold;
@@ -336,7 +329,7 @@ body {
     margin-bottom: 8px; /* Отступ после имени автора */
 }
 
-.card-title-three {
+.card-title-final {
     font-family: 'EB Garamond', serif;
     font-size: 22px;
     font-weight: normal;
@@ -345,7 +338,7 @@ body {
     margin-bottom: 8px; /* Отступ после заголовка */
 }
 
-.card-text-three {
+.card-text-final {
     font-family: 'Intel', sans-serif;
     font-size: 16px;
     margin: 0;
@@ -354,11 +347,13 @@ body {
 }
 
 .footer {
-    width: 360px;
-    height: 62px;
+    max-width: 360px; /* Максимальная ширина  */
+    width: 100%; /* Занимает всю доступную ширину контейнера */
+    min-height: 62px; /* Минимальная высота для сохранения текущих пропорций */
     background-color: #1e1e1e;
     position: relative;
     margin: 0 auto; /* Центрирование футера */
+    box-sizing: border-box; /* Учет padding в ширине и высоте */
 }
 
 .footer::before {
